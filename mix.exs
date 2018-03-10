@@ -21,7 +21,9 @@ defmodule Doujind.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:httpotion, "~> 3.1.0"}
+      {:httpotion, "~> 3.1.0"},
+      {:floki, "~> 0.20.0"},
+      {:download, "~> 0.0.4"}
     ]
   end
 end
