@@ -6,6 +6,8 @@ defmodule Doujind.MixProject do
       app: :doujind,
       version: "0.1.0",
       elixir: "~> 1.6",
+      escript: escript,
+      build_embedded: Mix.env == :prod,
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -26,4 +28,6 @@ defmodule Doujind.MixProject do
       {:download, "~> 0.0.4"}
     ]
   end
+
+  def escript, do: [main_module: Doujind]
 end

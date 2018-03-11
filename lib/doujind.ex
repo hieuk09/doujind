@@ -1,7 +1,7 @@
 defmodule Doujind do
   @root_url "https://nhentai.net"
 
-  def run do
+  def main(args \\ []) do
     response = HTTPotion.get(@root_url)
     links = Floki.attribute(response.body, ".cover", "href")
 
