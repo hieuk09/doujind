@@ -25,7 +25,7 @@ defmodule Doujind.MixProject do
     [
       {:httpotion, "~> 3.1.0"},
       {:floki, "~> 0.20.0"},
-      {:download, "~> 0.0.4"}
+      {:download, git: "git@github.com:hieuk09/download.git"}
     ]
   end
 
