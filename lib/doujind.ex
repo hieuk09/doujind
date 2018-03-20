@@ -12,11 +12,11 @@ defmodule Doujind do
     full_link = Enum.join([@root_url, link], "")
     page = HTTPotion.get(full_link)
     links = Floki.attribute(page.body, ".gallerythumb", "href")
-    folder_path = String.trim(link, "/")
-    File.mkdir_p(folder_path)
+    chapter_name = Floki.find(page.body, "#info-block #info h1") |> Floki.text
+    File.mkdir_p(chapter_name)
 
     Enum.each links, fn page_link ->
-      download_page(folder_path, page_link)
+      download_page(chapter_name, page_link)
     end
   end
 
